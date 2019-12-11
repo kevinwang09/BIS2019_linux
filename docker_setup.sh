@@ -5,17 +5,18 @@ apt-get update
 apt-get -y install ssh nano samtools wget
 
 mkdir /home/data/
+echo startdownload
 wget -q https://storage.googleapis.com/scp_data/linux_workshop_data.tar -P /home/data/
-
+echo enddownload
 
 ## Set-up users
-sudo groupadd trainees
+groupadd trainees
 
 for((userIndex = 1; userIndex <= 50; userIndex++))
   do
 {
   userID=user${userIndex}
-  sudo useradd -g trainees -d /home/$userID -m -s /bin/bash $userID
-  echo $userID:2019 | sudo chpasswd
+  useradd -g trainees -d /home/$userID -m -s /bin/bash $userID
+  echo $userID:2019 | chpasswd
 }
 done
