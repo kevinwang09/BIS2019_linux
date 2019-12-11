@@ -16,6 +16,7 @@ for((userIndex = 1; userIndex <= 50; userIndex++))
   do
 {
   userID=user${userIndex}
+  echo $userID
   useradd -g trainees -d /home/$userID -m -s /bin/bash $userID
   echo $userID:2019 | chpasswd
 }
