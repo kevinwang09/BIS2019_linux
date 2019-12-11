@@ -5,7 +5,7 @@ apt-get update
 apt-get -y install ssh nano samtools wget
 
 mkdir /home/data/
-wget https://storage.googleapis.com/scp_data/linux_workshop_data.tar -P /home/data/
+wget -q https://storage.googleapis.com/scp_data/linux_workshop_data.tar -P /home/data/
 
 
 ## Set-up users
